@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CRUD SALAS</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <%- include('../navbar.html') %>
+    <div class="container">
+      <a
+        href="/sala/registrarSalas"
+        method="post"
+        class="btn btn-outline-primary mt-4"
+        ><i class="bx bxs-plus-circle bx-md"></i
+      ></a>
+      <table class="table table-bordered table-striped text-center mt-4">
+        <thead>
+          <tr class="bg-danger text-white">
+            <th scope="col">ID</th>
+            <th scope="col">ASIENTOS</th>
+            <th scope="col">DESCRIPCION</th>
+            <th scope="col">ACCIONES</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% results.forEach((Salas) => { %>
+          <tr>
+            <td><%= Salas.Id_sala %></td>
+            <td><%= Salas.Asientos %></td>
+            <td><%= Salas.Descripcion %></td>
+
+            <td>
+              <a
+                href="/sala/editar/<%= Salas.Id_sala %>"
+                class="btn btn-outline-dark"
+                >Editar</a
+              >
+              <a
+                href="/sala/delete/<%= Salas.Id_sala %>"
+                class="btn btn-outline-danger"
+                >Borrar</a
+              >
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

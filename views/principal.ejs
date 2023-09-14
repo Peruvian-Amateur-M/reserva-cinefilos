@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CineFilos - ¡Vive la Magia del Cine!</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+      .cursor-circle {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border: 2px solid black;
+        border-radius: 50%;
+        pointer-events: none;
+      }
+      .movie-image {
+        transition: transform 0.3s ease-in-out;
+      }
+      .movie-image:hover {
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <%- include('./navbar.html') %>
+      <div
+        class="hero-content text-center animate__animated animate__fadeIn"
+      ></div>
+    </header>
+    <section class="movies py-5">
+      <div class="container">
+        <a
+          href="/peliculas"
+          class="btn btn-danger btn-lg animate__animated animate__fadeInUp"
+          >Explorar Películas</a
+        >
+        <h2 class="text-center mb-4 animate__animated animate__fadeIn">
+          Próximos Estrenos
+        </h2>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <img
+              src="https://dcupdates.org/wp-content/uploads/2023/08/Blue-Beetle-Poster.jpg"
+              class="movie-image img-fluid animate__animated animate__slideInDown"
+              alt="Blue Beetle"
+            />
+          </div>
+          <div class="col-md-4 mb-4">
+            <img
+              src="https://entupantalla.com/wp-content/uploads/2023/05/ES_SPAIN_MEG2_VERT_MAIN_2764x4096_INTL-scaled.jpg"
+              class="movie-image img-fluid animate__animated animate__slideInDown"
+              alt="Promo Image"
+            />
+          </div>
+          <div class="col-md-4 mb-4">
+            <img
+              src="https://i0.wp.com/cuatrobastardos.com/wp-content/uploads/2023/02/PE_LAS_OnLine_1080x1350_FNL_CrossFront_0376.jpg?resize=1080%2C1350&ssl=1"
+              class="movie-image img-fluid animate__animated animate__slideInDown"
+              alt="Promo Image"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer bg-light py-4">
+      <div class="container">
+        <p class="text-center">
+          &copy; 2023 CineFilos - Todos los derechos reservados
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const cursorCircle = document.createElement("div");
+        cursorCircle.className = "cursor-circle";
+        document.body.appendChild(cursorCircle);
+
+        document.addEventListener("mousemove", function (event) {
+          cursorCircle.style.left = event.clientX + "px";
+          cursorCircle.style.top = event.clientY + "px";
+        });
+      });
+    </script>
+  </body>
+</html>

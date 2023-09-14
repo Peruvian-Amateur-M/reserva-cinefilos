@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" href="../styles/register.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <title>Register</title>
+
+    <!-- CSS only -->
+
+   
+
+ 
+
+</head>
+
+<body class="bg-dark">
+
+   
+
+  <div class="container mt-5">
+
+    <h1 class="form-title text-light">Regístrate ahora y podrás comprar en línea</h1>
+
+    <br>
+
+    <form action="/register" method="POST">
+
+        <div class="form-group mb-4">
+
+            <label for="fullName" class="form-label font-weight-bold text-light"> Nombre: </label>
+
+            <input type="text" id="fullName" name="fullName" class="form-control bg-dark-x col-sm-5" placeholder="Nombre" required/>
+
+</div>
+
+<div class="form-group mb-3">
+
+            <label for="lastName" class="form-label font-weight-bold text-light"> Apellidos: </label>
+
+            <input type="text" id="lastName" name="lastName" class="form-control bg-dark-x" placeholder="Apellidos" required/>
+
+</div>
+
+<div class="form-group mb-3">
+
+            <label for="phoneNumber" class="form-label font-weight-bold text-light"> Numero de celular: </label>
+
+            <input type="text" id="phoneNumber" name="phoneNumber" class="form-control bg-dark-x" placeholder="Numero de celular" required/>
+
+</div>
+
+<div class="form-group mb-3">
+
+            <label for="userName" class="form-label font-weight-bold text-light"> Usuario: </label>
+
+            <input type="text" id="userName" name="userName" class="form-control bg-dark-x" placeholder="Usuario" required/>
+
+</div>
+
+<div class="form-group mb-3">
+
+            <label for="email" class="form-label font-weight-bold text-light"> Correo: </label>
+
+            <input type="text" id="email" name="email" class="form-control bg-dark-x" placeholder="Correo" required/>
+
+</div>
+
+<div class="form-group mb-3">
+
+            <label for="password" class="form-label font-weight-bold text-light"> Contraseña: </label>
+
+            <input type="text" id="password" name="password" class="form-control bg-dark-x" placeholder="Contraseña" required/>
+
+</div>
+
+<div class="form-group mb-3">
+
+            <label for="confirmPassword" class="form-label font-weight-bold text-light"> Confirme su contraseña: </label>
+
+            <input type="text" id="confirmPassword" name="confirmPassword" class="form-control bg-dark-x" placeholder="Confirme su contraseña" required/>
+
+</div>
+
+
+     <br>
+
+     <div class="form-submit-btn">
+
+       <input type="submit" value="Registrarme">
+
+     </div>
+
+        <br>
+
+        <a href="users" value="Regresar" class="btn btn-outline-primary"> Regresar</a>
+        </div>
+    </form>
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

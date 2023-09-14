@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CRUD PELICULAS</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <%- include('../navbar.html') %>
+
+    <div class="container mt-4">
+      <div class="card border-secondary">
+        <div class="card-header">Editar Película</div>
+        <div class="card-body">
+          <form method="post" action="/peliculas/update">
+            <input
+              type="hidden"
+              class="form-control"
+              id="id"
+              value="<%= peliculas.Id_pelicula %>"
+              name="id"
+            />
+            <div class="mb-3">
+              <label for="Titulo" class="form-label">Título</label>
+              <input
+                type="text"
+                class="form-control"
+                id="Titulo"
+                value="<%= peliculas.Titulo %>"
+                name="titulo"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="Duracion" class="form-label">Duración</label>
+              <input
+                type="text"
+                class="form-control"
+                id="Duracion"
+                value="<%= peliculas.Duracion %>"
+                name="duracion"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="Genero" class="form-label">Género</label>
+              <input
+                type="text"
+                class="form-control"
+                id="Genero"
+                value="<%= peliculas.Genero %>"
+                name="genero"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="Clasificacion" class="form-label"
+                >Clasificación</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="Clasificacion"
+                value="<%= peliculas.Clasificacion %>"
+                name="clasificacion"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="Portada" class="form-label">Portada</label>
+              <input
+                type="text"
+                class="form-control"
+                id="Portada"
+                value="<%= peliculas.Portada %>"
+                name="portada"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="Estado" class="form-label">Estado</label>
+              <input
+                type="text"
+                class="form-control"
+                id="Estado"
+                value="<%= peliculas.Estado %>"
+                name="estado"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary" tabindex="6">
+              Guardar
+            </button>
+            <a href="/peliculas" class="btn btn-secondary">Cancelar</a>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

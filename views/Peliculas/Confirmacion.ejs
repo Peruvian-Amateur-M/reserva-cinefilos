@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <meta charset="UTF-8" />
+    <title>Confirmación de Reserva</title>
+  </head>
+  <body>
+    <%- include('../navbar.html') %>
+    <div class="container text-center animate__animated animate__fadeIn">
+      <h1 class="animate__animated animate__bounceInDown">
+        Confirmación de Reserva
+      </h1>
+      <% if (pelicula) { %>
+      <h2 class="animate__animated animate__fadeIn">
+        ¡Has reservado para <%= pelicula.Titulo %>!
+      </h2>
+      <h3 class="animate__animated animate__fadeIn">
+        Detalles de la Película:
+      </h3>
+      <h4 class="animate__animated animate__fadeIn"><%= pelicula.Titulo %></h4>
+      <!-- Mostrar otros detalles de la película... -->
+      <h3 class="animate__animated animate__fadeIn">Asientos Seleccionados:</h3>
+      <ul class="animate__animated animate__fadeIn">
+        <% for (let i = 0; i < detallesAsientos.length; i++) { %>
+        <li>
+          Asiento <%= detallesAsientos[i].NumeroAsiento %> - Fila <%=
+          detallesAsientos[i].Fila %> - Precio <%= detallesAsientos[i].Precio %>
+        </li>
+        <% } %>
+      </ul>
+      <% } %>
+      <a
+        href="/pago?pelicula=<%= pelicula.Id_pelicula %>&asientos=<%= encodeURIComponent(JSON.stringify(detallesAsientos)) %>"
+        class="btn btn-primary animate__animated animate__fadeInUp"
+        >Realizar Pago</a
+      >
+    </div>
+  </body>
+</html>
